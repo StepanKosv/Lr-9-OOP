@@ -1,0 +1,4 @@
+/Users/aleksandr/Downloads/st lr 9 oop/LR9OOP/obj/Debug/net8.0/LR9OOP.GeneratedMSBuildEditorConfig.editorconfig
+/Users/aleksandr/Downloads/st lr 9 oop/LR9OOP/obj/Debug/net8.0/LR9OOP.AssemblyInfoInputs.cache
+/Users/aleksandr/Downloads/st lr 9 oop/LR9OOP/obj/Debug/net8.0/LR9OOP.AssemblyInfo.cs
+/Users/aleksandr/Downloads/st lr 9 oop/LR9OOP/obj/Debug/net8.0/LR9OOP.csproj.CoreCompileInputs.cache
