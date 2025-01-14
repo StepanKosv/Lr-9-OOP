@@ -62,7 +62,7 @@ class Runner1TimeArray{
         ln--;
         success=true;
     }
-    void PopLast(out bool success, out Runner1Time? val){
+    public void PopLast(out bool success, out Runner1Time? val){
         if(Len()==0){
             success=false;
             val=null;
