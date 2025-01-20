@@ -34,7 +34,7 @@ class Runner1Time{
     }
     public double AvgTimeToRun(){
         if(avgSpeed==0){
-            throw new ZeroSpeedException($"time is infinity or not determinated. speed:{avgSpeed}, distance:{distance}");
+            throw new ZeroSpeedException($"time is infinity or not determined. speed:{avgSpeed}, distance:{distance}");
         }
         return distance/avgSpeed;
     }
@@ -46,7 +46,7 @@ class Runner1Time{
             throw new NegativeDistanceException($"speed:{avgSpeed}, distance:{distance}");
         }
         if(avgSpeed==0){
-            throw new ZeroSpeedException($"time is infinity or not determinated. speed:{avgSpeed}, distance:{distance}");
+            throw new ZeroSpeedException($"time is infinity or not determined. speed:{avgSpeed}, distance:{distance}");
         }
         return distance/avgSpeed;
     }
@@ -66,7 +66,7 @@ class Runner1Time{
     public static explicit operator double(Runner1Time run){
         var time=run.AvgTimeToRun()*0.95;
         if(time==0){
-            throw new ZeroTimeException($"time is zero=>speed can't be determinated");
+            throw new ZeroTimeException($"time is zero=>speed can't be determined");
         }
         var speed=run.distance/time;
         return speed-run.avgSpeed;
