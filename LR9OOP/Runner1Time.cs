@@ -1,5 +1,13 @@
 class Runner1Time{
-    static int count=0;
+    static int _count=0;
+    public static int count{
+        get{
+            return _count;
+        }
+        private set{
+            _count=value;
+        }
+    }
     double _avgSpeed, _distance;
     public double avgSpeed{
         get{
@@ -7,7 +15,7 @@ class Runner1Time{
         }
         set{
             if(value<0){
-                throw new NegativeSpeedException(value);
+                throw new NegativeSpeedException($"avgSpeed:{value}");
             }
             _avgSpeed=value;
         }
@@ -18,7 +26,7 @@ class Runner1Time{
         }
         set{
             if(value<0){
-                throw new NegativeDistanceException($"distance: {distance}");
+                throw new NegativeDistanceException($"distance: {value}");
             }
             _distance=value;
         }
