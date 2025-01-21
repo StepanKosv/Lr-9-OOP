@@ -86,6 +86,12 @@ class Runner1Time{
         int seconds=(int)(((time-hours)*60-minutes)*60);
         return $"{hours}:{minutes}:{seconds}";
     }
+    public override bool Equals(object? obj){
+        if(obj is not null && obj is Runner1Time runner){
+            return runner.avgSpeed==this.avgSpeed&&runner.distance==this.distance;
+        }
+        return false;
+    }
     public class NegativeSpeedException:Exception{
         public NegativeSpeedException(double _val):base($"value: {_val}"){}
         public NegativeSpeedException(string message):base(message){}

@@ -19,6 +19,8 @@ internal class Program
         Runner1Time runner1=new Runner1Time();
         Runner1Time runner2=new Runner1Time(3.5,2);
         Runner1Time runner3=new Runner1Time(runner2);
+        Console.WriteLine($"runner1.Equals(runner2): {runner1.Equals(runner2)}");
+        Console.WriteLine($"runner2.Equals(runner3): {runner2.Equals(runner3)}");
         Runner1Time[] rns={runner1,runner2,runner3};
         foreach(var e in rns){
             Console.WriteLine(e.ToString());
