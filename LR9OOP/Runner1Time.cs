@@ -86,6 +86,18 @@ class Runner1Time{
         int seconds=(int)(((time-hours)*60-minutes)*60);
         return $"{hours}:{minutes}:{seconds}";
     }
+    public static double operator -(Runner1Time a, Runner1Time b){
+        if(a.distance+b.distance<15){
+            return -1;
+        }
+        if(a.avgSpeed+b.avgSpeed==0){
+            throw new ZeroSpeedException($"total speed = 0 => time is infinity or not determined.");
+        }
+        return 15/(a.avgSpeed+b.avgSpeed);
+    }
+    public static Runner1Time operator ^(Runner1Time r, double sp){
+        return new Runner1Time();
+    }
     public override bool Equals(object? obj){
         if(obj is not null && obj is Runner1Time runner){
             return runner.avgSpeed==this.avgSpeed&&runner.distance==this.distance;
