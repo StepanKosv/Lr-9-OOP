@@ -91,12 +91,12 @@ class Runner1Time{
             return -1;
         }
         if(a.avgSpeed+b.avgSpeed==0){
-            throw new ZeroSpeedException($"total speed = 0 => time is infinity or not determined.");
+            throw new ZeroSpeedException($"total speed is 0 => time is infinity or not determined.");
         }
         return 15/(a.avgSpeed+b.avgSpeed);
     }
     public static Runner1Time operator ^(Runner1Time r, double sp){
-        return new Runner1Time();
+        return new Runner1Time(r){avgSpeed=r.avgSpeed+sp};
     }
     public override bool Equals(object? obj){
         if(obj is not null && obj is Runner1Time runner){

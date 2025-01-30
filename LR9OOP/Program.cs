@@ -53,11 +53,12 @@ internal class Program
         //double r2=runner2;
         double r2=(double) runner2;
         Console.WriteLine($"\t(double)runner2: {r2}");
-        
         Console.WriteLine($"demo '(string)'");
         string r3=runner3;
         r3=(string) runner3;
         Console.WriteLine($"\t(string)runner3: {r3}");
+        Console.WriteLine($"runner1-runner2: {runner1-runner2}");
+        Console.WriteLine($"runner1^10.3: {runner1^10.3}");
     }
     private static void Main(string[] args)
     {
