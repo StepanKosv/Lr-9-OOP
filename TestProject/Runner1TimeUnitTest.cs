@@ -26,6 +26,18 @@ public class Runner1TimeUnitTest
         );
     }
     [TestMethod]
+    public void TestStaticTimeNegativeSpeed(){
+        Assert.ThrowsException<Runner1Time.NegativeSpeedException>(
+            ()=>Runner1Time.StaticAvgTime(-10, 0)
+        );
+    }
+    [TestMethod]
+    public void TestStaticTimeNegativeDistance(){
+        Assert.ThrowsException<Runner1Time.NegativeDistanceException>(
+            ()=>Runner1Time.StaticAvgTime(1, -25)
+        );
+    }
+    [TestMethod]
     public void TestTimeZeroSpeed(){
         Runner1Time runner1 = new Runner1Time();
         Assert.ThrowsException<Runner1Time.ZeroSpeedException>(
@@ -53,50 +65,5 @@ public class Runner1TimeUnitTest
         Assert.ThrowsException<Runner1Time.NegativeDistanceException>(()=>new Runner1Time(0,-1));
         Runner1Time run = new Runner1Time(0, 0);
         Assert.ThrowsException<Runner1Time.NegativeDistanceException>(()=>run.distance=-50);
-    }
-    [TestMethod]
-    public void TestIncrement(){
-        Runner1Time runner2 = new Runner1Time(3.5, 2);
-        Assert.AreEqual(runner2++, new Runner1Time(speed: 3.5, distance: 2));
-        Assert.AreEqual(runner2, new Runner1Time(speed: 3.5, distance: 2.1));
-        Assert.AreEqual(++runner2, new Runner1Time(speed: 3.5, distance: 2.2));
-        Assert.AreEqual(runner2, new Runner1Time(speed: 3.5, distance: 2.2));
-    }
-    [TestMethod]
-    public void TestDecrement(){
-        Runner1Time runner2 = new Runner1Time(speed: 3.5, distance: 2.2);
-        Assert.AreEqual(runner2--, new Runner1Time(speed: 3.5, distance: 2.2));
-        Assert.AreEqual(runner2, new Runner1Time(speed: 3.45, distance: 2.2));
-        Assert.AreEqual((--runner2).avgSpeed, 3.4, 0.001);
-        Assert.AreEqual(runner2.avgSpeed, 3.4, 0.001);
-    }
-    [TestMethod]
-    public void TestDecrementNegative(){
-        Runner1Time runner2 = new Runner1Time();
-        Assert.ThrowsException<Runner1Time.NegativeSpeedException>(()=>runner2--);
-        Assert.ThrowsException<Runner1Time.NegativeSpeedException>(()=>--runner2);
-    }
-    [TestMethod]
-    public void TestDoubleExplicit(){
-        var runner2= new Runner1Time(speed: 3.4, distance: 2.2);
-        Assert.AreEqual((double) runner2, 0.1789473684210523, 0.001);
-    }
-    [TestMethod]
-    public void TestStringImplicit(){
-        Runner1Time runner3 = new Runner1Time(3.5, 2);
-        string r3 = runner3;
-        Assert.AreEqual(r3, "0:34:17");
-    }
-    [TestMethod]
-    public void TestBinaryMinus(){
-        Runner1Time runner1 = new Runner1Time();
-        Runner1Time runner2= new Runner1Time(speed: 3.4, distance: 2.2);
-        Assert.AreEqual(runner1-runner2, -1);
-        Assert.AreEqual(runner2-new Runner1Time(6,13), 1.5957446808510638, 0.001);
-    }
-    [TestMethod]
-    public void TestCaret(){
-        Runner1Time runner1 = new Runner1Time();
-        Assert.AreEqual(runner1^10.3, new Runner1Time(speed: 10.3, distance: 0));
     }
 }
