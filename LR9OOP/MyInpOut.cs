@@ -66,11 +66,11 @@ namespace Logic
         {
             try
             {
-                Console.WriteLine(func());
+                MyConsole.WriteLine(func());
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                MyConsole.WriteLine(e);
             }
         }
         public static void tryDo(Action act)
@@ -81,27 +81,27 @@ namespace Logic
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                MyConsole.WriteLine(e);
             }
         }
         public static double InputDouble(string input_promt, double min = double.NegativeInfinity, double max = double.PositiveInfinity)
         {
             double res;
-            Console.WriteLine(input_promt);
+            MyConsole.WriteLine(input_promt);
             bool is_correct = false;
             do
             {
-                if (!double.TryParse(Console.ReadLine(), out res))
+                if (!double.TryParse(MyConsole.ReadLine(), out res))
                 {
-                    Console.WriteLine("ошибка: ввод - число в пределах double");
+                    MyConsole.WriteLine("ошибка: ввод - число в пределах double");
                 }
                 else if (res < min)
                 {
-                    Console.WriteLine($"ошибка: ввод не меньше {min}");
+                    MyConsole.WriteLine($"ошибка: ввод не меньше {min}");
                 }
                 else if (res > max)
                 {
-                    Console.WriteLine($"ошибка: ввод не больше {max}");
+                    MyConsole.WriteLine($"ошибка: ввод не больше {max}");
                 }
                 else
                 {
@@ -112,33 +112,33 @@ namespace Logic
         }
         public static Runner1Time InputRunner1Time()
         {
-            Console.WriteLine("введите информацию об одноразовом бегуне");
+            MyConsole.WriteLine("введите информацию об одноразовом бегуне");
             var res = new Runner1Time(
                 InputDouble("введите скорость - число в пределах double", min: 0),
                 InputDouble("введите расстояние - число в пределах double", min: 0)
                 );
-            Console.WriteLine("ввод завершен");
+            MyConsole.WriteLine("ввод завершен");
             return res;
         }
         public static int InputLenght(string input_promt, int? max = null)
         {
             max = max ?? Array.MaxLength;
             int res;
-            Console.WriteLine(input_promt);
+            MyConsole.WriteLine(input_promt);
             bool is_correct = false;
             do
             {
-                if (!int.TryParse(Console.ReadLine(), out res))
+                if (!int.TryParse(MyConsole.ReadLine(), out res))
                 {
-                    Console.WriteLine("ошибка: длинна - целое число");
+                    MyConsole.WriteLine("ошибка: длинна - целое число");
                 }
                 else if (res < 0)
                 {
-                    Console.WriteLine("ошибка: длинна - неотрицательное число");
+                    MyConsole.WriteLine("ошибка: длинна - неотрицательное число");
                 }
                 else if (res > max)
                 {
-                    Console.WriteLine($"ошибка: длинна не боьше {max}");
+                    MyConsole.WriteLine($"ошибка: длинна не боьше {max}");
                 }
                 else
                 {
@@ -164,13 +164,13 @@ namespace Logic
         public static int InputInt(string input_promt)
         {
             int res;
-            Console.WriteLine(input_promt);
+            MyConsole.WriteLine(input_promt);
             bool is_correct = false;
             do
             {
-                if (!int.TryParse(Console.ReadLine(), out res))
+                if (!int.TryParse(MyConsole.ReadLine(), out res))
                 {
-                    Console.WriteLine("ошибка: ввод - целое число");
+                    MyConsole.WriteLine("ошибка: ввод - целое число");
                 }
                 else
                 {
