@@ -139,6 +139,11 @@ namespace Logic
             }
             return false;
         }
+        /*
+        ~Runner1Time(){
+            _count--;
+        }
+        */
         public class NegativeSpeedException : Exception
         {
             public NegativeSpeedException(double _val) : base($"value: {_val}") { }

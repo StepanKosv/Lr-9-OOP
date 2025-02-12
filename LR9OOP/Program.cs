@@ -146,8 +146,8 @@
         }
         public static void Main(string[] args)
         {
-            //DemoPart1();
-            //DemoPart2();
+            DemoPart1();
+            DemoPart2();
             DemoPart3();
         }
     }
