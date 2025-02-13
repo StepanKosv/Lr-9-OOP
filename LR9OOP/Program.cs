@@ -84,6 +84,8 @@
             "print - print list\n"+
             "add - add element to list\n"+
             "rm - remove last element to list\n"+
+            "get - get element by index (from 0)\n"+
+            "set - set element by index\n"+
             "menu - print menu\n"+
             "stop - stop working";
             Runner1TimeArray arr=null;
@@ -130,6 +132,22 @@
                             }else{
                                 MyConsole.WriteLine($"deleted element {val.ToString()}");
                             }
+                        }
+                        break;
+                    case "get":
+                        if(arr is null){
+                            MyConsole.WriteLine("list does not exist");
+                        }else{
+                            int i=MyInpOut.InputInt("input index of element (from 0)");
+                            MyInpOut.tryPrint(()=>arr[i]);
+                        }
+                        break;
+                    case "set":
+                        if(arr is null){
+                            MyConsole.WriteLine("list does not exist");
+                        }else{
+                            int i=MyInpOut.InputInt("input index of element (from 0)");
+                            MyInpOut.tryDo(()=>{arr[i]=MyInpOut.InputRunner1Time();});
                         }
                         break;
                     case "menu":
