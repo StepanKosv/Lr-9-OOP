@@ -26,12 +26,12 @@ public class ArraysUnitTest{
     public void TestIndexError(){
         Runner1TimeArray arr1=new Runner1TimeArray(new Runner1Time(3,4), 10);
         Assert.ThrowsException<IndexOutOfRangeException>(()=>arr1[-1]);
-        Assert.ThrowsException<IndexOutOfRangeException>(()=>arr1[10]);
+        Assert.ThrowsException<IndexOutOfRangeException>(()=>{arr1[10]=new Runner1Time();});
     }
     [TestMethod]
     public void TestAddRemove(){
         Runner1TimeArray arr=new Runner1TimeArray();
-        int n=1000000;
+        int n=(int)Math.Pow(10,6);
         for(int i=0; i<n; i++){
             arr.Add(new Runner1Time(i,i));
         }

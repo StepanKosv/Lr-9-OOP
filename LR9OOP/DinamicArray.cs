@@ -25,7 +25,7 @@ public class DinamicArray<T>
         }
     }
     int ln;
-    public DinamicArray(Func<int, T> source, int count):this()
+    public DinamicArray(Func<int, T> source, int count) : this()
     {
         values = new T[count];
         ln = count;
@@ -37,8 +37,8 @@ public class DinamicArray<T>
 
     public DinamicArray()
     {
-        values=new T[0];
-        ln=0;
+        values = new T[0];
+        ln = 0;
     }
 
     public int Len() => ln;
@@ -80,11 +80,12 @@ public class DinamicArray<T>
     {
         if (Len() == 0)
         {
-            success = false;
             val = default(T);
-            return;
         }
-        val = this[Len() - 1];
+        else
+        {
+            val = this[Len() - 1];
+        }
         PopLast(out success);
     }
     public bool All(Func<int, T, bool> cond)

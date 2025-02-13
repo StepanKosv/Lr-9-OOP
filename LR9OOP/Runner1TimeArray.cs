@@ -4,12 +4,12 @@ namespace Logic
     {
         public Runner1TimeArray(Func<int, Runner1Time> source, int count) : base(source, count)
         { }
-        public Runner1TimeArray(Runner1Time val, int count) : base(
+        public Runner1TimeArray(Runner1Time val, int count) : this(
             (i) => new Runner1Time(val),
             count
         )
         { }
-        public Runner1TimeArray(Runner1TimeArray origin) : base(
+        public Runner1TimeArray(Runner1TimeArray origin) : this(
             (i) => new Runner1Time(origin[i]),
             origin.Len()
         )
