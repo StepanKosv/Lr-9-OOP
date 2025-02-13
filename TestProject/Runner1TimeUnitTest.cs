@@ -66,4 +66,8 @@ public class Runner1TimeUnitTest
         Runner1Time run = new Runner1Time(0, 0);
         Assert.ThrowsException<Runner1Time.NegativeDistanceException>(()=>run.distance=-50);
     }
+    [TestMethod]
+    public void TestToString(){
+        Assert.AreEqual(new Runner1Time(3.5,2).ToString(),"Runner1Time(speed: 3.5, distance: 2)");
+    }
 }
