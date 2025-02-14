@@ -9,10 +9,10 @@
             Runner1Time runner2 = new Runner1Time(3.5, 2);
             Runner1Time runner3 = new Runner1Time(runner2);
             MyConsole.WriteLine($"runner1:{runner1},\nrunner2:{runner2},\nrunner3:{runner3}");
-            MyConsole.ReadLine();
+            MyConsole.WaitUser();
             MyConsole.WriteLine($"runner1.Equals(runner2): {runner1.Equals(runner2)}");
             MyConsole.WriteLine($"runner2.Equals(runner3): {runner2.Equals(runner3)}");
-            MyConsole.ReadLine();
+            MyConsole.WaitUser();
             Runner1Time[] rns = { runner1, runner2, runner3 };
             foreach (var e in rns)
             {
@@ -21,15 +21,15 @@
                 MyInpOut.tryPrint(() => Runner1Time.StaticAvgTime(e.avgSpeed, e.distance));
                 MyConsole.WriteLine("method time:");
                 MyInpOut.tryPrint(() => e.AvgTimeToRun());
-                MyConsole.ReadLine();
+                MyConsole.WaitUser();
             }
             Runner1Time run = new Runner1Time(0, 0);
             MyConsole.WriteLine("try set speed or distance under zero:");
             MyInpOut.tryDo(() => run.distance = -10);
             MyInpOut.tryDo(() => run.avgSpeed = -10);
-            MyConsole.ReadLine();
+            MyConsole.WaitUser();
             MyConsole.WriteLine($"count: {Runner1Time.count}");
-            MyConsole.ReadLine();
+            MyConsole.WaitUser();
         }
         static void DemoPart2()
         {
@@ -38,19 +38,19 @@
             Runner1Time runner2 = new Runner1Time(3.5, 2);
             Runner1Time runner3 = new Runner1Time(runner2);
             MyConsole.WriteLine($"runner1:{runner1},\nrunner2:{runner2},\nrunner3:{runner3}");
-            MyConsole.ReadLine();
+            MyConsole.WaitUser();
             MyConsole.WriteLine("demo Equals");
             MyConsole.WriteLine($"\trunner1.Equals(runner2): {runner1.Equals(runner2)}");
             MyConsole.WriteLine($"\trunner2.Equals(runner3): {runner2.Equals(runner3)}");
-            MyConsole.ReadLine();
+            MyConsole.WaitUser();
             MyConsole.WriteLine("demo '++'");
             MyConsole.WriteLine($"\t(runner2++): {runner2++}; -> runner2: {runner2}");
             MyConsole.WriteLine($"\t(++runner2): {++runner2}; -> runner2: {runner2}");
-            MyConsole.ReadLine();
+            MyConsole.WaitUser();
             MyConsole.WriteLine("demo '--'");
             MyConsole.WriteLine($"\t(runner2--): {runner2--}; -> runner2: {runner2}");
             MyConsole.WriteLine($"\t(--runner2): {--runner2}; -> runner2: {runner2}");
-            MyConsole.ReadLine();
+            MyConsole.WaitUser();
             MyConsole.WriteLine($"demo '(double)'");
             //double r2=runner2;
             double r2 = (double)runner2;
@@ -62,18 +62,18 @@
             MyConsole.WriteLine($"\trunner22.AvgTimeToRun(): {runner22.AvgTimeToRun()}");
             MyConsole.WriteLine($"\trunner2.AvgTimeToRun(): {runner2.AvgTimeToRun()}");
             MyConsole.WriteLine($"\t(runner22.AvgTimeToRun()-runner2.AvgTimeToRun())/runner2.AvgTimeToRun(): {(runner22.AvgTimeToRun() - runner2.AvgTimeToRun()) / runner2.AvgTimeToRun()}");
-            MyConsole.ReadLine();
+            MyConsole.WaitUser();
             MyConsole.WriteLine($"demo '(string)'");
             string r3 = runner3;
             r3 = (string)runner3;
             MyConsole.WriteLine($"\t(string)runner3: {r3}");
             MyConsole.WriteLine($"\trunner3.AvgTimeToRun(): {runner3.AvgTimeToRun()}");
-            MyConsole.ReadLine();
+            MyConsole.WaitUser();
             MyConsole.WriteLine($"runner1-runner2: {runner1 - runner2}");
             MyConsole.WriteLine($"runner2-new Runner1Time(6,13): {runner2 - new Runner1Time(6, 13)}");
-            MyConsole.ReadLine();
+            MyConsole.WaitUser();
             MyConsole.WriteLine($"runner1^10.3: {runner1 ^ 10.3}");
-            MyConsole.ReadLine();
+            MyConsole.WaitUser();
         }
         static void DemoPart3()
         {

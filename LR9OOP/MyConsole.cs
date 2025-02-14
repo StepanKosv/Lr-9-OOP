@@ -7,5 +7,9 @@ namespace Logic
         public static string? ReadLine(){
             return Console.ReadLine();
         }
+        public static void WaitUser(){
+            Console.Write("press enter to continue: ");
+            Console.ReadLine();
+        }
     }
 }
