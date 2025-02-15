@@ -86,6 +86,7 @@
             "rm - remove last element to list\n"+
             "get - get element by index (from 0)\n"+
             "set - set element by index\n"+
+            "sort - sort array\n"+
             "menu - print menu\n"+
             "stop - stop working";
             Runner1TimeArray arr=null;
@@ -150,6 +151,14 @@
                             MyInpOut.tryDo(()=>{arr[i]=MyInpOut.InputRunner1Time();});
                         }
                         break;
+                    case "sort":
+                        if(arr is null){
+                            MyConsole.WriteLine("list does not exist");
+                        }else{
+                            Sort(arr);
+                            Console.WriteLine("array sorted");
+                        }
+                        break;
                     case "menu":
                         MyConsole.WriteLine(menu);
                         break;
@@ -161,6 +170,19 @@
                         break;
                 }
             }while(!end);
+        }
+        static void Sort(Runner1TimeArray arr){
+            for(int i=0; i<arr.Len()-1; i++){
+                for(int j=i+1; j<arr.Len(); j++){
+                    bool f1=arr[i].distance>arr[j].distance;
+                    bool f2=f1||((arr[i].distance==arr[j].distance)&&(arr[i].avgSpeed<arr[j].avgSpeed));
+                    if(f2){
+                        Runner1Time r=arr[i];
+                        arr[i]=arr[j];
+                        arr[j]=r;
+                    }
+                }
+            }
         }
         public static void Main(string[] args)
         {
