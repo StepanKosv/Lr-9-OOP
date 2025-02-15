@@ -156,7 +156,7 @@
                             MyConsole.WriteLine("list does not exist");
                         }else{
                             Sort(arr);
-                            Console.WriteLine("array sorted");
+                            MyConsole.WriteLine("array sorted");
                         }
                         break;
                     case "menu":
