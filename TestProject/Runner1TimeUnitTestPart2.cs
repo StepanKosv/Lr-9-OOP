@@ -55,7 +55,7 @@ public class Runner1TimeUnitTestPart2{
     [TestMethod]
     public void TestBinaryMinusZeroSpeed(){
         Runner1Time run=new Runner1Time(0,10);
-        Assert.ThrowsException<Runner1Time.ZeroSpeedException>(()=>run-run);
+        Assert.AreEqual(-1,run-run);
     }
     [TestMethod]
     public void TestCaret(){

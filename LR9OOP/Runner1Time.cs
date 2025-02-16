@@ -123,7 +123,7 @@ namespace Logic
             }
             if (a.avgSpeed + b.avgSpeed == 0)
             {
-                throw new ZeroSpeedException($"total speed is 0 => time is infinity or not determined.");
+                return -1;
             }
             return 15 / (a.avgSpeed + b.avgSpeed);
         }
